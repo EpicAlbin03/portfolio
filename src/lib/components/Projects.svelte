@@ -38,7 +38,7 @@
 	const entries: Entry[] = [
 		{
 			title: "Simple Tab Manager",
-			date: "Aug 2024 – Nov 2024",
+			date: "Jul 2024 – Nov 2024",
 			content: SimpleTabManager,
 			technologies: [
 				{ label: "Sveltekit", icon: Svelte },
@@ -151,7 +151,7 @@
 {#snippet Xplorify()}
 	<p>
 		Designed and built the frontend for a geocaching-inspired Android app on a team of 5. The app
-		enables users to select, travel, save, review, share, and create caches.
+		enables users to select, travel to, save, review, share, and create caches.
 	</p>
 {/snippet}
 
