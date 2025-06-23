@@ -18,6 +18,7 @@
 	import Nextjs from "$lib/icons/Nextjs.svelte";
 	import { Code, Database, Globe, Palette, Star, type Icon as IconType } from "@lucide/svelte";
 	import type { Technology } from "$lib/icons";
+	import SplineIcon from "$lib/icons/spline.png";
 
 	type Tab = {
 		id: string;
@@ -78,7 +79,7 @@
 			icon: Palette,
 			technologies: [
 				{ label: "Figma", icon: Figma },
-				{ label: "Spline", img: "src/lib/icons/spline.png" }
+				{ label: "Spline", img: SplineIcon }
 			]
 		}
 	];
@@ -107,7 +108,7 @@
 							<Card.Header class="block sm:hidden">
 								<Card.Title>{tab.title}</Card.Title>
 							</Card.Header>
-							<Card.Content class="flex flex-wrap gap-6">
+							<Card.Content class="flex w-xs flex-wrap gap-6 sm:w-auto">
 								{#each tab.technologies as technology}
 									<Tooltip text={technology.label}>
 										{#if technology.img}
