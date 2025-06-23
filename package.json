@@ -50,7 +50,6 @@
 	"dependencies": {
 		"class-variance-authority": "^0.7.1",
 		"mini-svg-data-uri": "^1.4.4",
-		"mode-watcher": "^1.0.8",
-		"svelte-motion": "^0.12.2"
+		"mode-watcher": "^1.0.8"
 	}
 }
