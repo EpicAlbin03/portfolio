@@ -60,6 +60,15 @@
 			]
 		},
 		{
+			title: "Halstead Complexity",
+			date: "Jan 2025 – Jun 2025",
+			text: [
+				"Co-developed a Python CLI tool for my Bachelor's thesis that analyzes the complexity of Python and JavaScript code, using Halstead metrics based on operators and operands."
+			],
+			technologies: [technologies.Python],
+			buttons: [{ type: "github", href: "https://github.com/robjoh01/HalsteadComplexity" }]
+		},
+		{
 			title: "Xplorify",
 			date: "Nov 2024 – Jan 2025",
 			text: [
