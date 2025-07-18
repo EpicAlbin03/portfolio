@@ -7,7 +7,8 @@
 		Github,
 		Moon,
 		Sun,
-		type Icon as IconType
+		type Icon as IconType,
+		Linkedin
 	} from "@lucide/svelte";
 	import Separator from "$lib/components/ui/separator/separator.svelte";
 	import { toggleMode, mode } from "mode-watcher";
@@ -37,7 +38,13 @@
 			id: "contact",
 			links: [
 				{ label: "GitHub", icon: Github, href: "https://github.com/EpicAlbin03", newTab: true },
-				{ label: "Email", icon: Mail, href: "mailto:career@albincarlsson.com" }
+				{ label: "Email", icon: Mail, href: "mailto:career@albincarlsson.com" },
+				{
+					label: "Linkedin",
+					icon: Linkedin,
+					href: "https://www.linkedin.com/in/albin-carlsson-61623a374/",
+					newTab: true
+				}
 			]
 		}
 	];

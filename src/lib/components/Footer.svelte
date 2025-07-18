@@ -1,10 +1,16 @@
 <script>
-	import { Github, Mail } from "@lucide/svelte";
+	import { Github, Linkedin, Mail } from "@lucide/svelte";
 	import Button from "./ui/button/button.svelte";
 
 	const links = [
 		{ label: "GitHub", icon: Github, href: "https://github.com/EpicAlbin03", newTab: true },
-		{ label: "Email", icon: Mail, href: "mailto:career@albincarlsson.com" }
+		{ label: "Email", icon: Mail, href: "mailto:career@albincarlsson.com" },
+		{
+			label: "Linkedin",
+			icon: Linkedin,
+			href: "https://www.linkedin.com/in/albin-carlsson-61623a374/",
+			newTab: true
+		}
 	];
 
 	const year = new Date().getFullYear();
