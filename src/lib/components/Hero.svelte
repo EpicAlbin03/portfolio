@@ -20,9 +20,9 @@
 						Hello, I'm Albin
 					</h1>
 					<p class="text-muted-foreground max-w-xl xl:text-xl">
-						I am a recent graduate with a Bachelor's degree in Software Engineering, specializing in
-						frontend development. I focus on building clean, efficient, and user-friendly web
-						applications.
+						I am a recent graduate with a Bachelor's degree in Software Engineering, focused on
+						solving technical challenges and building reliable, efficient software. I have a strong
+						interest in web development and continue to grow my skills in that area.
 					</p>
 					<p class="text-muted-foreground my-4 text-sm">
 						Get in touch: <span>
