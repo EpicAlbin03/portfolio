@@ -1,14 +1,14 @@
 <script lang="ts">
 	import * as Tabs from "$lib/components/ui/tabs/index.js";
 	import * as Card from "$lib/components/ui/card/index.js";
-	import { Code, Database, Globe, Palette, Star, type Icon as IconType } from "@lucide/svelte";
-	import { TECHNOLOGIES, type Technology } from "$lib/data/technologies";
+	import { Code, Database, Globe, Palette, Star } from "@lucide/svelte";
+	import { technologies, type Technology } from "$lib/data/technologies";
 	import TechnologyIcon from "$lib/utils/TechnologyIcon.svelte";
 
 	type Tab = {
 		id: string;
 		title: string;
-		icon: typeof IconType;
+		icon: LucideIcon;
 		technologies: Technology[];
 	};
 
@@ -18,10 +18,10 @@
 			title: "Most Used",
 			icon: Star,
 			technologies: [
-				TECHNOLOGIES.SvelteSvelteKit,
-				TECHNOLOGIES.TypeScript,
-				TECHNOLOGIES.Tailwind,
-				TECHNOLOGIES.Figma
+				technologies.SvelteSvelteKit,
+				technologies.TypeScript,
+				technologies.Tailwind,
+				technologies.Figma
 			]
 		},
 		{
@@ -29,12 +29,12 @@
 			title: "Languages",
 			icon: Code,
 			technologies: [
-				TECHNOLOGIES.HTML,
-				TECHNOLOGIES.CSS,
-				TECHNOLOGIES.JavaScript,
-				TECHNOLOGIES.TypeScript,
-				TECHNOLOGIES.Python,
-				TECHNOLOGIES.CSharp
+				technologies.HTML,
+				technologies.CSS,
+				technologies.JavaScript,
+				technologies.TypeScript,
+				technologies.Python,
+				technologies.CSharp
 			]
 		},
 		{
@@ -42,22 +42,22 @@
 			title: "Frameworks",
 			icon: Globe,
 			technologies: [
-				TECHNOLOGIES.SvelteSvelteKit,
-				TECHNOLOGIES.ReactNextjs,
-				TECHNOLOGIES.ReactNative
+				technologies.SvelteSvelteKit,
+				technologies.ReactNextjs,
+				technologies.ReactNative
 			]
 		},
 		{
 			id: "databases",
 			title: "Databases",
 			icon: Database,
-			technologies: [TECHNOLOGIES.MySQL, TECHNOLOGIES.Firebase, TECHNOLOGIES.Supabase]
+			technologies: [technologies.MySQL, technologies.Firebase, technologies.Supabase]
 		},
 		{
 			id: "design",
 			title: "Design",
 			icon: Palette,
-			technologies: [TECHNOLOGIES.Figma, TECHNOLOGIES.Spline]
+			technologies: [technologies.Figma, technologies.Spline]
 		}
 	];
 </script>

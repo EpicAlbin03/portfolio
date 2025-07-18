@@ -31,7 +31,7 @@ type Technology = {
 	img?: string;
 };
 
-const TECHNOLOGIES = {
+const technologies = {
 	Blazor: { label: "Blazor", icon: Blazor },
 	ChromeAPI: { label: "Chrome API", icon: Chrome },
 	ChromeWebStore: { label: "Chrome Web Store", icon: Chrome },
@@ -62,4 +62,4 @@ const TECHNOLOGIES = {
 } as const satisfies Record<string, Technology>;
 
 export type { Technology };
-export { TECHNOLOGIES };
+export { technologies };
