@@ -1,30 +1,13 @@
 <script lang="ts">
 	import { Separator } from "$lib/components/ui/separator";
-	import Nextjs from "$lib/icons/Nextjs.svelte";
-	import MySQL from "$lib/icons/MySQL.svelte";
-	import Ericsson from "$lib/icons/Ericsson.svelte";
-	import Svelte from "$lib/icons/Svelte.svelte";
-	import Typescript from "$lib/icons/Typescript.svelte";
-	import Chrome from "$lib/icons/Chrome.svelte";
-	import Figma from "$lib/icons/Figma.svelte";
-	import React from "$lib/icons/React.svelte";
-	import Expo from "$lib/icons/Expo.svelte";
-	import Zod from "$lib/icons/Zod.svelte";
-	import Javascript from "$lib/icons/Javascript.svelte";
 	import Tooltip from "$lib/utils/Tooltip.svelte";
 	import Button from "./ui/button/button.svelte";
 	import { Github, Play } from "@lucide/svelte";
-	import ChromeWebStore from "$lib/icons/ChromeWebStore.svelte";
 	import { Badge } from "./ui/badge";
-	import Firebase from "$lib/icons/Firebase.svelte";
-	import Tailwind from "$lib/icons/Tailwind.svelte";
-	import type { Technology } from "$lib/icons";
-	import Dotnet from "$lib/icons/Dotnet.svelte";
-	import CSharp from "$lib/icons/CSharp.svelte";
-	import Blazor from "$lib/icons/Blazor.svelte";
-	import SqLite from "$lib/icons/SQLite.svelte";
+	import { TECHNOLOGIES, type Technology } from "$lib/data/technologies";
+	import { ChromeWebStore, Figma } from "$lib/icons";
 
-	type Entry = {
+	type Project = {
 		title: string;
 		date: string;
 		content: () => ReturnType<import("svelte").Snippet>;
@@ -35,16 +18,16 @@
 		}[];
 	};
 
-	const entries: Entry[] = [
+	const projects: Project[] = [
 		{
 			title: "Simple Tab Manager",
 			date: "Jul 2024 – Nov 2024",
 			content: SimpleTabManager,
 			technologies: [
-				{ label: "Sveltekit", icon: Svelte },
-				{ label: "TypeScript", icon: Typescript },
-				{ label: "Tailwind CSS", icon: Tailwind },
-				{ label: "Chrome API", icon: Chrome }
+				TECHNOLOGIES.SvelteKit,
+				TECHNOLOGIES.TypeScript,
+				TECHNOLOGIES.Tailwind,
+				TECHNOLOGIES.ChromeAPI
 			],
 			buttons: [
 				{ snippet: GitHubButton, href: "https://github.com/EpicAlbin03/Simple-Tab-Manager" },
@@ -59,11 +42,11 @@
 			date: "Jan 2025 – Jun 2025",
 			content: EBLWin,
 			technologies: [
-				{ label: "Figma", icon: Figma },
-				{ label: "C#", icon: CSharp },
-				{ label: ".NET", icon: Dotnet },
-				{ label: "Blazor", icon: Blazor },
-				{ label: "SQLite", icon: SqLite }
+				TECHNOLOGIES.Figma,
+				TECHNOLOGIES.CSharp,
+				TECHNOLOGIES.Dotnet,
+				TECHNOLOGIES.Blazor,
+				TECHNOLOGIES.SQLite
 			]
 		},
 		{
@@ -71,13 +54,13 @@
 			date: "Nov 2024 – Jan 2025",
 			content: Xplorify,
 			technologies: [
-				{ label: "Figma", icon: Figma },
-				{ label: "React Native", icon: React },
-				{ label: "Expo", icon: Expo },
-				{ label: "TypeScript", icon: Typescript },
-				{ label: "Tailwind CSS", icon: Tailwind },
-				{ label: "Zod", icon: Zod },
-				{ label: "Firebase", icon: Firebase }
+				TECHNOLOGIES.Figma,
+				TECHNOLOGIES.ReactNative,
+				TECHNOLOGIES.Expo,
+				TECHNOLOGIES.TypeScript,
+				TECHNOLOGIES.Tailwind,
+				TECHNOLOGIES.Zod,
+				TECHNOLOGIES.Firebase
 			],
 			buttons: [
 				{ snippet: GitHubButton, href: "https://github.com/Baa123124/PA1469" },
@@ -92,10 +75,10 @@
 			date: "Jan 2024 – May 2024",
 			content: Chronos,
 			technologies: [
-				{ label: "Next.js", icon: Nextjs },
-				{ label: "JavaScript", icon: Javascript },
-				{ label: "MySQL", icon: MySQL },
-				{ label: "Ericsson Design System", icon: Ericsson }
+				TECHNOLOGIES.Nextjs,
+				TECHNOLOGIES.JavaScript,
+				TECHNOLOGIES.MySQL,
+				TECHNOLOGIES.Ericsson
 			]
 		},
 		{
@@ -103,10 +86,10 @@
 			date: "Jan 2023 – Mar 2023",
 			content: TorontoCupcakes,
 			technologies: [
-				{ label: "Sveltekit", icon: Svelte },
-				{ label: "TypeScript", icon: Typescript },
-				{ label: "Tailwind CSS", icon: Tailwind },
-				{ label: "Zod", icon: Zod }
+				TECHNOLOGIES.SvelteKit,
+				TECHNOLOGIES.TypeScript,
+				TECHNOLOGIES.Tailwind,
+				TECHNOLOGIES.Zod
 			],
 			buttons: [
 				{ snippet: GitHubButton, href: "https://github.com/EpicAlbin03/toronto-cupcakes" },
@@ -201,23 +184,23 @@
 			Projects
 		</h1>
 		<div class="relative mx-auto w-fit">
-			{#each entries as entry}
+			{#each projects as project}
 				<div class="relative mb-10 pl-8">
 					<Separator orientation="vertical" class="bg-muted absolute top-4 left-3.5" />
 					<div class="bg-foreground absolute top-3.5 left-[6.5px] flex size-4 rounded-full"></div>
 					<div class="pl-4">
 						<h2 class="rounded-xl py-2 text-xl font-bold tracking-tight xl:px-3">
-							{entry.title}
+							{project.title}
 						</h2>
 						<h3 class="text-md text-muted-foreground rounded-xl tracking-tight xl:px-3">
-							{entry.date}
+							{project.date}
 						</h3>
 						<div class="border-none px-0 py-4 shadow-none xl:px-2">
 							<div class="prose dark:prose-invert text-foreground">
-								{@render entry.content()}
-								{#if entry.buttons}
+								{@render project.content()}
+								{#if project.buttons}
 									<div class="flex items-center gap-2">
-										{#each entry.buttons as button}
+										{#each project.buttons as button}
 											{@render button.snippet(button.href)}
 										{/each}
 									</div>
@@ -225,7 +208,7 @@
 							</div>
 							<div class="mt-6 flex gap-4">
 								<p class="text-muted-foreground text-sm">Technologies used:</p>
-								{#each entry.technologies as technology}
+								{#each project.technologies as technology}
 									<Tooltip text={technology.label}>
 										<technology.icon size={16} />
 									</Tooltip>

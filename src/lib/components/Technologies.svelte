@@ -1,24 +1,9 @@
 <script lang="ts">
 	import * as Tabs from "$lib/components/ui/tabs/index.js";
 	import * as Card from "$lib/components/ui/card/index.js";
-	import Svelte from "$lib/icons/Svelte.svelte";
-	import Javascript from "$lib/icons/Javascript.svelte";
-	import Typescript from "$lib/icons/Typescript.svelte";
-	import Figma from "$lib/icons/Figma.svelte";
 	import Tooltip from "$lib/utils/Tooltip.svelte";
-	import CSharp from "$lib/icons/CSharp.svelte";
-	import Python from "$lib/icons/Python.svelte";
-	import Html from "$lib/icons/HTML.svelte";
-	import Css from "$lib/icons/CSS.svelte";
-	import Tailwind from "$lib/icons/Tailwind.svelte";
-	import MySql from "$lib/icons/MySQL.svelte";
-	import Supabase from "$lib/icons/Supabase.svelte";
-	import Firebase from "$lib/icons/Firebase.svelte";
-	import React from "$lib/icons/React.svelte";
-	import Nextjs from "$lib/icons/Nextjs.svelte";
 	import { Code, Database, Globe, Palette, Star, type Icon as IconType } from "@lucide/svelte";
-	import type { Technology } from "$lib/icons";
-	import SplineIcon from "$lib/icons/spline.png";
+	import { TECHNOLOGIES, type Technology } from "$lib/data/technologies";
 
 	type Tab = {
 		id: string;
@@ -33,10 +18,10 @@
 			title: "Most Used",
 			icon: Star,
 			technologies: [
-				{ label: "Svelte/Sveltekit", icon: Svelte },
-				{ label: "TypeScript", icon: Typescript },
-				{ label: "Tailwind CSS", icon: Tailwind },
-				{ label: "Figma", icon: Figma }
+				TECHNOLOGIES.SvelteSvelteKit,
+				TECHNOLOGIES.TypeScript,
+				TECHNOLOGIES.Tailwind,
+				TECHNOLOGIES.Figma
 			]
 		},
 		{
@@ -44,12 +29,12 @@
 			title: "Languages",
 			icon: Code,
 			technologies: [
-				{ label: "HTML", icon: Html },
-				{ label: "CSS", icon: Css },
-				{ label: "JavaScript", icon: Javascript },
-				{ label: "TypeScript", icon: Typescript },
-				{ label: "Python", icon: Python },
-				{ label: "C#", icon: CSharp }
+				TECHNOLOGIES.HTML,
+				TECHNOLOGIES.CSS,
+				TECHNOLOGIES.JavaScript,
+				TECHNOLOGIES.TypeScript,
+				TECHNOLOGIES.Python,
+				TECHNOLOGIES.CSharp
 			]
 		},
 		{
@@ -57,30 +42,22 @@
 			title: "Frameworks",
 			icon: Globe,
 			technologies: [
-				{ label: "Svelte/Sveltekit", icon: Svelte },
-				{ label: "Next.js", icon: Nextjs },
-				{ label: "React", icon: React },
-				{ label: "React Native", icon: React }
+				TECHNOLOGIES.SvelteSvelteKit,
+				TECHNOLOGIES.ReactNextjs,
+				TECHNOLOGIES.ReactNative
 			]
 		},
 		{
 			id: "databases",
 			title: "Databases",
 			icon: Database,
-			technologies: [
-				{ label: "MySQL", icon: MySql },
-				{ label: "Firebase", icon: Firebase },
-				{ label: "Supabase", icon: Supabase }
-			]
+			technologies: [TECHNOLOGIES.MySQL, TECHNOLOGIES.Firebase, TECHNOLOGIES.Supabase]
 		},
 		{
 			id: "design",
 			title: "Design",
 			icon: Palette,
-			technologies: [
-				{ label: "Figma", icon: Figma },
-				{ label: "Spline", img: SplineIcon }
-			]
+			technologies: [TECHNOLOGIES.Figma, TECHNOLOGIES.Spline]
 		}
 	];
 </script>
