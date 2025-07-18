@@ -1,17 +1,7 @@
-<script>
-	import { Github, Linkedin, Mail } from "@lucide/svelte";
+<script lang="ts">
 	import Button from "./ui/button/button.svelte";
-
-	const links = [
-		{ label: "GitHub", icon: Github, href: "https://github.com/EpicAlbin03", newTab: true },
-		{ label: "Email", icon: Mail, href: "mailto:career@albincarlsson.com" },
-		{
-			label: "Linkedin",
-			icon: Linkedin,
-			href: "https://www.linkedin.com/in/albin-carlsson-61623a374/",
-			newTab: true
-		}
-	];
+	import contactLinks from "$lib/data/contact";
+	import Tooltip from "$lib/utils/Tooltip.svelte";
 
 	const year = new Date().getFullYear();
 </script>
@@ -25,15 +15,17 @@
 				<p>© {year} Albin Carlsson</p>
 				<ul class="flex gap-4">
 					<li>
-						{#each links as link}
-							<Button
-								href={link.href}
-								variant="ghost"
-								class="hover:text-muted-foreground"
-								aria-label={link.label}
-							>
-								<link.icon />
-							</Button>
+						{#each contactLinks as link}
+							<Tooltip text={link.label}>
+								<Button
+									href={link.href}
+									variant="ghost"
+									class="hover:text-muted-foreground"
+									aria-label={link.label}
+								>
+									<link.icon />
+								</Button>
+							</Tooltip>
 						{/each}
 					</li>
 				</ul>

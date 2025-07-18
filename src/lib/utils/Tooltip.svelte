@@ -1,5 +1,6 @@
 <script lang="ts">
 	import * as Tooltip from "$lib/components/ui/tooltip/index.js";
+	import toolTipConfig from "$lib/data/tooltip-config";
 	import type { Snippet } from "svelte";
 
 	type Props = {
@@ -11,7 +12,7 @@
 </script>
 
 <Tooltip.Provider>
-	<Tooltip.Root delayDuration={400}>
+	<Tooltip.Root delayDuration={toolTipConfig.delayDuration}>
 		<Tooltip.Trigger aria-label={text}>
 			{@render children()}
 		</Tooltip.Trigger>

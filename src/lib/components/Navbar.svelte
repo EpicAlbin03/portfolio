@@ -1,27 +1,18 @@
 <script lang="ts">
-	import {
-		Home,
-		Folders,
-		Code,
-		Mail,
-		Github,
-		Moon,
-		Sun,
-		type Icon as IconType,
-		Linkedin
-	} from "@lucide/svelte";
+	import { Home, Folders, Code, Moon, Sun } from "@lucide/svelte";
 	import Separator from "$lib/components/ui/separator/separator.svelte";
 	import { toggleMode, mode } from "mode-watcher";
 	import Button from "./ui/button/button.svelte";
 	import * as Tooltip from "$lib/components/ui/tooltip/index.js";
+	import contactLinks from "$lib/data/contact";
+	import toolTipConfig from "$lib/data/tooltip-config";
 
 	type Section = {
 		id: string;
 		links: {
 			label: string;
-			icon: typeof IconType;
+			icon: LucideIcon;
 			href: string;
-			newTab?: boolean;
 		}[];
 	};
 
@@ -36,16 +27,7 @@
 		},
 		{
 			id: "contact",
-			links: [
-				{ label: "GitHub", icon: Github, href: "https://github.com/EpicAlbin03", newTab: true },
-				{ label: "Email", icon: Mail, href: "mailto:career@albincarlsson.com" },
-				{
-					label: "Linkedin",
-					icon: Linkedin,
-					href: "https://www.linkedin.com/in/albin-carlsson-61623a374/",
-					newTab: true
-				}
-			]
+			links: contactLinks
 		}
 	];
 </script>
@@ -56,13 +38,13 @@
 			{#each section.links as link}
 				<li>
 					<Tooltip.Provider>
-						<Tooltip.Root delayDuration={400}>
+						<Tooltip.Root delayDuration={toolTipConfig.delayDuration}>
 							<Tooltip.Trigger>
 								{#snippet child({ props })}
 									<Button
 										{...props}
 										aria-label={link.label}
-										target={link.newTab ? "blank" : undefined}
+										target="_blank"
 										href={link.href}
 										variant="ghost"
 										size="icon"
@@ -87,7 +69,7 @@
 		{/each}
 		<li>
 			<Tooltip.Provider>
-				<Tooltip.Root delayDuration={400}>
+				<Tooltip.Root delayDuration={toolTipConfig.delayDuration}>
 					<Tooltip.Trigger>
 						{#snippet child({ props })}
 							<Button
