@@ -1,9 +1,9 @@
 <script lang="ts">
 	import * as Tabs from "$lib/components/ui/tabs/index.js";
 	import * as Card from "$lib/components/ui/card/index.js";
-	import Tooltip from "$lib/utils/Tooltip.svelte";
 	import { Code, Database, Globe, Palette, Star, type Icon as IconType } from "@lucide/svelte";
 	import { TECHNOLOGIES, type Technology } from "$lib/data/technologies";
+	import TechnologyIcon from "$lib/utils/TechnologyIcon.svelte";
 
 	type Tab = {
 		id: string;
@@ -87,13 +87,7 @@
 							</Card.Header>
 							<Card.Content class="flex w-xs flex-wrap gap-6 sm:w-auto">
 								{#each tab.technologies as technology}
-									<Tooltip text={technology.label}>
-										{#if technology.img}
-											<img src={technology.img} width={24} alt={technology.img} />
-										{:else}
-											<technology.icon size={24} />
-										{/if}
-									</Tooltip>
+									<TechnologyIcon {technology} />
 								{/each}
 							</Card.Content>
 						</Card.Root>

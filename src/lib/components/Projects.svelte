@@ -6,6 +6,7 @@
 	import { Badge } from "./ui/badge";
 	import { TECHNOLOGIES, type Technology } from "$lib/data/technologies";
 	import { ChromeWebStore, Figma } from "$lib/icons";
+	import TechnologyIcon from "$lib/utils/TechnologyIcon.svelte";
 
 	type Project = {
 		title: string;
@@ -209,9 +210,7 @@
 							<div class="mt-6 flex gap-4">
 								<p class="text-muted-foreground text-sm">Technologies used:</p>
 								{#each project.technologies as technology}
-									<Tooltip text={technology.label}>
-										<technology.icon size={16} />
-									</Tooltip>
+									<TechnologyIcon {technology} size={16} />
 								{/each}
 							</div>
 						</div>
