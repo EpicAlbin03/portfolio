@@ -49,6 +49,7 @@
 		]
 	},
 	"dependencies": {
+		"@splinetool/runtime": "^1.10.51",
 		"class-variance-authority": "^0.7.1",
 		"mini-svg-data-uri": "^1.4.4",
 		"mode-watcher": "^1.0.8"
