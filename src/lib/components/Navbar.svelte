@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Home, Folders, Code, Moon, Sun } from "@lucide/svelte";
 	import Separator from "$lib/components/ui/separator/separator.svelte";
-	import { toggleMode, mode } from "mode-watcher";
+	import { toggleMode } from "mode-watcher";
 	import Button from "./ui/button/button.svelte";
 	import * as Tooltip from "$lib/components/ui/tooltip/index.js";
 	import contactLinks from "$lib/data/contact";
@@ -80,11 +80,14 @@
 								class="h-auto cursor-pointer rounded-lg p-2"
 								onclick={toggleMode}
 							>
-								{#if mode.current == "light"}
-									<Sun strokeWidth={1.25} class="size-5" />
-								{:else}
-									<Moon strokeWidth={1.25} class="size-5" />
-								{/if}
+								<Sun
+									strokeWidth={1.25}
+									class="size-5 scale-100 rotate-0 !transition-all dark:scale-0 dark:-rotate-90"
+								/>
+								<Moon
+									strokeWidth={1.25}
+									class="absolute size-5 scale-0 rotate-90 !transition-all dark:scale-100 dark:rotate-0"
+								/>
 								<span class="sr-only">Toggle theme</span>
 							</Button>
 						{/snippet}
