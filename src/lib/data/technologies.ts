@@ -21,7 +21,6 @@ import {
 	HTML,
 	Python,
 	Supabase,
-	Spline,
 	CSS
 } from "$lib/icons";
 
@@ -50,7 +49,7 @@ const technologies = {
 	React: { label: "React", icon: React },
 	ReactNextjs: { label: "React/Next.js", icon: Nextjs },
 	ReactNative: { label: "React Native", icon: React },
-	Spline: { label: "Spline", img: Spline },
+	Spline: { label: "Spline", img: "/spline.png" },
 	SQLite: { label: "SQLite", icon: SQLite },
 	Supabase: { label: "Supabase", icon: Supabase },
 	Svelte: { label: "Svelte", icon: Svelte },
