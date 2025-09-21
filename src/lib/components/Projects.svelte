@@ -114,6 +114,7 @@
 		{
 			title: "Chronos",
 			date: "Jan 2024 – May 2024",
+			nda: true,
 			text: [
 				"Collaborated as a team of 5 using Scrum/Agile methodologies to design and implement an internal booking tool for the Ericsson Kubernetes test platform. The app enables users to reserve containers for a specific time period, view container status, and real-time metrics such as CPU and memory usage.",
 				"Focused on the frontend UI and authentication by implementing user-friendly interfaces and integrating LDAP for secure access. Also contributed to backend functionality with SQL to support reservation features."
