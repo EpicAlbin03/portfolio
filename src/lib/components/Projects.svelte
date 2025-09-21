@@ -25,6 +25,26 @@
 
 	const projects: Project[] = [
 		{
+			title: "shadcn/studio-svelte",
+			date: "Aug 2025 – Sep 2025",
+			text: [
+				"Converted shadcn/studio from React to Svelte, an open-source collection of copy-and-paste components, blocks, and templates paired with a powerful theme generator, allowing developers to craft, customize, and ship projects faster."
+			],
+			technologies: [
+				technologies.SvelteKit,
+				technologies.ReactNextjs,
+				technologies.TypeScript,
+				technologies.Tailwind
+			],
+			buttons: [
+				{ type: "github", href: "https://github.com/EpicAlbin03/shadcn-studio-svelte" },
+				{
+					type: "demo",
+					href: "https://shadcnstudio-svelte.netlify.app"
+				}
+			]
+		},
+		{
 			title: "Simple Tab Manager",
 			date: "Jul 2024 – Nov 2024",
 			text: [
@@ -48,7 +68,7 @@
 			title: "EBLWin Fire Alarm System",
 			date: "Jan 2025 – Jun 2025",
 			text: [
-				"Acted as UI lead on a team of 12 using Scrum/Agile methodologies to redesign Panasonic's fire alarm system, through the consulting firm Malvacom. The project focused on improving the design of the current system, which I played a leading role in. Another requirement was that it had to be hybrid, meaning it could run on Windows, Android, and web."
+				"Acted as UI lead on a team of 12 using Scrum/Agile methodologies to redesign Panasonic's fire alarm system, through the consulting firm Malvacom. The project focused on improving the design of the current system, which I played a leading role in. Another requirement was that it had to be hybrid, meaning it could run on Windows, Android, and the web."
 			],
 			nda: true,
 			technologies: [
@@ -104,22 +124,22 @@
 				technologies.MySQL,
 				technologies.Ericsson
 			]
-		},
-		{
-			title: "Toronto Cupcakes",
-			date: "Jan 2023 – Mar 2023",
-			snippet: TorontoCupcakesText,
-			technologies: [
-				technologies.SvelteKit,
-				technologies.TypeScript,
-				technologies.Tailwind,
-				technologies.Zod
-			],
-			buttons: [
-				{ type: "github", href: "https://github.com/EpicAlbin03/toronto-cupcakes" },
-				{ type: "demo", href: "https://toronto-cupcakes-redesign.netlify.app/" }
-			]
 		}
+		// {
+		// 	title: "Toronto Cupcakes",
+		// 	date: "Jan 2023 – Mar 2023",
+		// 	snippet: TorontoCupcakesText,
+		// 	technologies: [
+		// 		technologies.SvelteKit,
+		// 		technologies.TypeScript,
+		// 		technologies.Tailwind,
+		// 		technologies.Zod
+		// 	],
+		// 	buttons: [
+		// 		{ type: "github", href: "https://github.com/EpicAlbin03/toronto-cupcakes" },
+		// 		{ type: "demo", href: "https://toronto-cupcakes-redesign.netlify.app/" }
+		// 	]
+		// }
 	];
 
 	const projectButtonConfig = {
@@ -130,7 +150,7 @@
 	} as const;
 </script>
 
-{#snippet TorontoCupcakesText()}
+<!-- {#snippet TorontoCupcakesText()}
 	<p>
 		Redesigned the <span>
 			<Button variant="link" href="https://www.torontocupcake.com/" target="_blank" class="p-0">
@@ -138,7 +158,7 @@
 			</Button>
 		</span> website to improve the UI/UX, achieving a more intuitive layout, navigation and color scheme.
 	</p>
-{/snippet}
+{/snippet} -->
 
 {#snippet ProjectButton(button: ProjectButton)}
 	{@const config = projectButtonConfig[button.type]}
