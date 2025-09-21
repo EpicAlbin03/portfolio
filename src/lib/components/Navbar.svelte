@@ -33,7 +33,9 @@
 </script>
 
 <div class="fixed z-50 mt-4">
-	<ul class="bg-card mx-auto flex w-fit items-center justify-center gap-2 rounded-lg border p-2">
+	<ul
+		class="bg-card mx-auto flex w-fit items-center justify-center gap-1 rounded-lg border p-2 sm:gap-2"
+	>
 		{#each sections as section, index}
 			{#each section.links as link}
 				<li>
@@ -44,7 +46,7 @@
 									<Button
 										{...props}
 										aria-label={link.label}
-										target="_blank"
+										target={section.id === "contact" ? "_blank" : undefined}
 										href={link.href}
 										variant="ghost"
 										size="icon"
